@@ -65,8 +65,8 @@
 - openapi-generator-cli
 
   1. if not installed: `sudo yarn global add @openapitools/openapi-generator-cli`
-  2. after installation run the following in project root path `openapi-generator-cli`
-  3. `openapi-generator-cli generate -g typescript-axios -i OPENAPI_FILE.yaml -o lib/`
+  2. after installation run the following in root path:
+     `openapi-generator-cli generate -g typescript-axios -i OPENAPI_FILE.yaml -o lib/`
 
 - axios
 

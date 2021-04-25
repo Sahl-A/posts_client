@@ -48,7 +48,6 @@ paths:
           schema:
             type: number
           description: The numbers of items to return
-
       responses:
         200:
           description: Get all posts
@@ -239,17 +238,6 @@ paths:
           $ref: "#/components/responses/error_conflict"
 components:
   schemas:
-    feed_response:
-      type: object
-      properties:
-        postsCount:
-          type: number
-          x-faker: random.number
-        posts:
-          type: array
-          items:
-            $ref: "#/components/schemas/single_post_response"
-          maxItems: 4
     options_group_creation: 
       type: object
       properties:
@@ -496,7 +484,15 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/feed_response"
+            type: object
+            properties:
+              postsCount:
+                type: number
+                x-faker: random.number
+              posts:
+                type: array
+                items:
+                  $ref: "#/components/schemas/single_post_response"
     single_post_deletion_response:
       description: Post deleted
     error_bad_request:
